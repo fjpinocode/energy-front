@@ -1,0 +1,44 @@
+<div class="col-sm-5 m-t-20 text-right">
+  <a href="#" [routerLink]="['/intro']" class="text-muted"
+    ><i class="mdi mdi-account-circle"></i>Volver a página principal</a
+  >
+</div>
+
+<div class="wrapper ">
+    <div class="row rowBackground justify-content-md-center">
+      <div class="col-lg-6 col-md-12 col-sm-12 mt-5">
+        <div class="card card-stats">
+          <div class="card-header ">
+            <h5 class="card-title">Listado Consumo</h5>
+            <p class="card-category">Consumos eléctricos cups: {{ getCups() }}</p>
+          </div>
+          <div class="card-body ">
+            <app-consumptions-list (updateData)="updateCharts()"></app-consumptions-list>
+          </div>
+          <div class="card-footer ">
+            <div class="stats">
+              <i class="fa fa-info"></i> Listado de consumos eléctricos correspondientes a cups: {{ getCups() }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row rowBackground justify-content-md-center">
+      <div class="col-lg-6 col-md-12 col-sm-12 mt-5">
+        <div class="card card-stats">
+          <div class="card-header ">
+            <h5 class="card-title">Gráfica de consumos</h5>
+            <p class="card-category">Gráfica de consumos</p>
+          </div>
+          <div class="card-body ">
+            <app-chart-consumption #chartCons></app-chart-consumption>
+          </div>
+          <div class="card-footer ">
+            <div class="stats">
+                <i class="fa fa-info"></i> Gráfica de consumos
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

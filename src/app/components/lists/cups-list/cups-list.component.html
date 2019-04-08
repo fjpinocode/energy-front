@@ -1,0 +1,53 @@
+<div>
+  <ngx-datatable
+    #table
+    class="bootstrap"
+    [rows]="rows"
+    [columns]="columns"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [rowHeight]="'auto'"
+    [columnMode]="'force'"
+
+    [loadingIndicator]="loadingIndicator"
+
+    [externalPaging]="true"
+    [externalSorting]="true"
+
+    [count]="page.count"
+    [offset]="page.offset"
+    [limit]="page.limit"
+    (page)='setPage($event)'
+    (sort)='sortPage($event)'
+
+    [messages]="{ 'emptyMessage': 'No hay guardado ningún dato de consumo', 'totalMessage': 'Total', 'selectedMessage': 'Seleccionado' }">
+  </ngx-datatable>
+
+  <ng-template #deleteTitle let-column="column" >
+    {{ column.name }}
+  </ng-template>
+  <ng-template #deleteRow let-value="value" let-row="row">
+    <button 
+    (click)="deleteCups(value, row)" type="button" class="btn btn-light btn-sm">
+      <img
+        title="eliminar cups"
+        width="15"
+        src="assets/img/trash-icon.png"
+      />
+    </button>
+  </ng-template>
+  
+  <ng-template #detailTitle let-column="column" >
+    {{ column.name }}
+  </ng-template>
+  <ng-template #detailRow let-value="value" let-row="row">
+    <button 
+    (click)="viewDetailCups(value, row)" type="button" class="btn btn-light btn-sm">
+      <img
+        title="ver cups detalle"
+        width="15"
+        src="assets/img/icon-eye.png"
+      />
+    </button>
+  </ng-template>
+</div>

@@ -1,0 +1,38 @@
+<div class="wrapper ">
+  <div class="row rowBackground justify-content-md-center">
+    <div class="col-lg-6 col-md-12 col-sm-12 mt-5">
+      <div class="card card-stats">
+        <div class="card-header ">
+          <h5 class="card-title">Importar CSV</h5>
+          <p class="card-category">Importar fichero de consumos eléctricos csv</p>
+        </div>
+        <div class="card-body ">
+          <app-intro-csv (updateData)="updateCupsList()"></app-intro-csv>
+        </div>
+        <div class="card-footer ">
+          <div class="stats">
+            <i class="fa fa-info"></i> Al importar el fichero csv se subirá y almacenará automáticamente en el servidor
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row rowBackground justify-content-md-center">
+    <div class="col-lg-6 col-md-12 col-sm-12 mt-5">
+      <div class="card card-stats">
+        <div class="card-header ">
+          <h5 class="card-title">CUPS</h5>
+          <p class="card-category">Listado de puntos de suministro</p>
+        </div>
+        <div class="card-body ">
+          <app-cups-list #cupsList></app-cups-list>
+        </div>
+        <div class="card-footer ">
+          <div class="stats">
+              <i class="fa fa-info"></i> Pulsar el botón de cada fila para ver detalle de consumos de cada CUPS
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
