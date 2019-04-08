@@ -17,7 +17,7 @@ export class ConsumptionsListComponent implements OnInit {
   @Output ()
   updateData = new EventEmitter <any>();
 
-  readonly PER_PAGE = 30;
+  readonly PER_PAGE = 20;
 
   ascTypeSort = false;
 
@@ -69,7 +69,6 @@ export class ConsumptionsListComponent implements OnInit {
     .subscribe(
       d => {
         console.log(d);
-        this.updateData.emit(true);
         this.setPage({});
       }
     );
@@ -103,6 +102,7 @@ export class ConsumptionsListComponent implements OnInit {
       data => {
         console.log('+++++++++++');
         console.log(data);
+        this.updateData.emit(true);
         this.page = data.page;
         this.rows = data.consumptions;
         this.loadingIndicator = false;

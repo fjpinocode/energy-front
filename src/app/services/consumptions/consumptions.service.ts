@@ -60,6 +60,7 @@ export class ConsumptionsService {
               consumptions.push(Consumption.fromJson(c));
             }
           );
+          this.consumptions = [...consumptions];
           resData = { consumptions, page };
           res = resData;
         }

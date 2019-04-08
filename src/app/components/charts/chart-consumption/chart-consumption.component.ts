@@ -33,27 +33,43 @@ export class ChartConsumptionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.initChart();
+    // this.initChart();
   }
 
   initChart() {
     this.isDataAvailable = false;
-    this.consumptionsSvc.getConsumptions(this.cupsSvc.selectedCups).subscribe(
-      d => {
-        this.barChartLabels = [];
-        this.barChartData = [];
-        const auxLabels = [];
-        const auxData = [];
-        d.consumptions.map(c => {
-          const con = Consumption.fromJson(c);
-          auxLabels.push(con.dateFormat);
-          auxData.push(con.consumption);
-        });
-        this.barChartLabels = auxLabels;
-        this.barChartData = [{ data: auxData, label: 'Consumos' }];
-        this.isDataAvailable = true;
-      }
-    );
+    if (this.consumptionsSvc.consumptions) {
+      const auxLabels = [];
+      const auxData = [];
+      this.consumptionsSvc.consumptions.map(c => {
+        const con = Consumption.fromJson(c);
+        auxLabels.push(con.dateFormat);
+        auxData.push(con.consumption);
+      });
+      this.barChartLabels = auxLabels;
+      this.barChartData = [{ data: auxData, label: 'Consumos' }];
+      this.isDataAvailable = true;
+    }
   }
+
+  // initChart() {
+  //   this.isDataAvailable = false;
+  //   this.consumptionsSvc.getConsumptions(this.cupsSvc.selectedCups).subscribe(
+  //     d => {
+  //       this.barChartLabels = [];
+  //       this.barChartData = [];
+  //       const auxLabels = [];
+  //       const auxData = [];
+  //       d.consumptions.map(c => {
+  //         const con = Consumption.fromJson(c);
+  //         auxLabels.push(con.dateFormat);
+  //         auxData.push(con.consumption);
+  //       });
+  //       this.barChartLabels = auxLabels;
+  //       this.barChartData = [{ data: auxData, label: 'Consumos' }];
+  //       this.isDataAvailable = true;
+  //     }
+  //   );
+  // }
 
 }
