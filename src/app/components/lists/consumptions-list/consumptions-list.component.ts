@@ -53,9 +53,10 @@ export class ConsumptionsListComponent implements OnInit {
         name: 'Eliminar'
       }
     );
-    setTimeout(() => {
-      this.setPage({});
-    }, 300);
+    this.setPage({ offset: 0 });
+    // setTimeout(() => {
+    //   this.setPage({});
+    // }, 300);
   }
 
   deleteConsumption(value) {
@@ -76,8 +77,6 @@ export class ConsumptionsListComponent implements OnInit {
 
   setPage(p: any) {
     this.page.offset = p.offset;
-    this.page.sort = 'cups';
-    this.page.dir = 'desc';
     this.fetchData();
   }
 
