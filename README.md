@@ -1,27 +1,28 @@
 # Energy
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
+Proyecto para analizar consumo eléctrico Angular version 7.3.1.
 
-## Development server
+## Instalación
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Una vez descargado el proyecto en local ejecutar el comando `npm i` para descargar los módulos de node.
 
-## Code scaffolding
+## Desarrollo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ejecutar en consola el comando `ng serve -o` para desplegar en local. Se lanzará la web en `http://localhost:4200/`.
 
-## Build
+## Pantallas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+La app consta de dos pantallas. La principal donde se insertan los consumos mediante un archivo csv y se muestran los distintos cups almacenados en la base de datos. Y la segunda pantalla donde se muestra en detalle los consumos asociados a un determinado cups y una gráfica de barras.
 
-## Running unit tests
+Si se insertan consumos con otros cups diferentes, la app agrupará consumos por cada cups.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Archivo csv
 
-## Running end-to-end tests
+El archivo csv deberá tener un formato de 5 columnas cuya primera fila será CUPS;Fecha;Hora;Consumo_kWh;Metodo_obtencion
+ya las siguientes filas serán del tipo: ES00XXXXXXXXXXXXXXDB;06/09/2015;1;0,267;R
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Se ha insertado en el proyecto una carpeta `csv ejemplo` donde se encuentra consumos.csv para probar.
 
-## Further help
+## TODO
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Pendiente de realizar los test unitarios.
