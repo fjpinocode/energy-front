@@ -1,6 +1,6 @@
 # Energy
 
-Proyecto para analizar consumo eléctrico Angular version 7.3.1.
+Proyecto para analizar consumo eléctrico desarrollado con Angular version 7.3.1.
 
 ## Instalación
 
